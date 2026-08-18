@@ -121,3 +121,10 @@ if grade==pass and exit_check_ok: allow_advance
 elif grade==partial: request_patch_or_requeue
 else: must-load tutor-remediate; remediate()
 ```
+
+
+## 出题内容边界
+
+- 综合测/阶段测的题干必须是 **领域知识**（CV/控制…）  
+- **禁止**把 tutor 纪律（如「懂了算不算过」）当成考题糊弄学生  
+- 元规则留给 skill，不进 quiz 卷面  
