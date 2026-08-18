@@ -52,3 +52,17 @@
 → 用户点名某层后再 Teach+Test
 → 禁止在总览前题海
 ```
+
+## 大科目路径：先调研再规划
+
+```
+新增大学科（如 CV）
+→ tutor-curriculum-research
+   · subagents/web：CS231n 等 schedule
+   · 写 _agent/research/
+→ 结合学习者 edge 裁剪
+→ classroom/路径规划-*.md + Mermaid
+→ 再按层新建 Lx 精讲文件
+```
+
+禁止跳过调研直接拍脑袋长路径（除非用户只要五分钟随口建议并知情）。

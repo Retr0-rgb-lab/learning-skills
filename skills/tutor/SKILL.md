@@ -7,7 +7,11 @@ description: Use when one-on-one tutoring, classroom markdown learning, Obsidian
 
 ## Overview
 
-拓宽认知边界。默认四阶段（Eero 流）：
+拓宽认知边界。
+
+**大科目建路径前**：先 `tutor-curriculum-research`（公开课/公共资料）再 Plan。
+
+默认四阶段（Eero 流）：
 
 1. **Probe** 3～5 道有梯度题，定位边缘（类二分，不重复已会、不越级）  
 2. **Plan** 拆依赖链，**输出 Mermaid**，锁定路线  
@@ -37,6 +41,11 @@ description: Use when one-on-one tutoring, classroom markdown learning, Obsidian
 - 若用户 **明确自认该领域小白/零基础**：视为 edge 已声明，**禁止题海确认**；直接薄背景 + 总体路线  
 - 否则 3～5 题，由易到难或中位试探；允许「不会」  
 - 输出：edge + 已会列表 → classroom「能力边界」+ `_agent/learner-model.yaml`
+
+### Phase 0 Curriculum research（大科目）
+- 权威公开课 schedule + 1～2 对照
+- 产出 `_agent/research/` + 学生可见路径规划页
+- 再进入 Mermaid Plan
 
 ### Phase 2 Plan
 - **优先交付**：总体 Mermaid 学习路径 + 分层人话讲解（写入 classroom）  

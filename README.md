@@ -21,7 +21,8 @@
 | Skill | 作用 |
 |-------|------|
 | `tutor` | 四阶段编排 + classroom-first |
-| `tutor-classroom` | 单文件读写约定 |
+| `tutor-classroom` | 课堂文件约定（不覆盖） |
+| `tutor-curriculum-research` | 大科目先调研公开课再规划 |
 | `tutor-probe` | 3～5 题定位边缘 |
 | `tutor-plan` | Mermaid 路线图 |
 | `tutor-teach-step` | 单步讲 |
