@@ -39,7 +39,7 @@
 ## 3. 文件协议（Obsidian）
 
 ```text
-notes/classroom/
+notes/learn/
   主题入门.md           # 稳定总览+目录
   路径规划-*.md         # 调研后规划
   L0-….md …             # 精讲+我的回答+反馈追加

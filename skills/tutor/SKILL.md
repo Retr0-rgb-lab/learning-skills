@@ -1,6 +1,6 @@
 ---
 name: tutor
-description: Use when one-on-one tutoring, classroom learning in Obsidian, Probe Plan Teach Test, CV or any subject tutoring, 一对一辅导, 继续学, 复习, or vault notes/classroom.
+description: Use when one-on-one tutoring, classroom learning in Obsidian, Probe Plan Teach Test, CV or any subject tutoring, 一对一辅导, 继续学, 复习, or vault notes/learn.
 ---
 
 # Tutor — 编排入口（必须调度子 skill）
@@ -29,21 +29,18 @@ description: Use when one-on-one tutoring, classroom learning in Obsidian, Probe
 
 ---
 
-## 文件模型决策树（消掉单/多文件矛盾）
+## 文件模型决策树
 
 ```
-IF 主题总览/目录/Mermaid 总图:
-  → notes/classroom/<主题>入门.md   # 稳定 INDEX，少改
-IF 某一层精讲+答题:
-  → notes/classroom/L{n}-*.md       # 新建；一课一文件
-IF 重图解:
-  → L{n}-图解.md + assets-*/
-IF 大科目规划说明:
-  → 路径规划-*.md
-学生「只看 classroom」= 看 INDEX 指到的当前课，不是永远一个物理文件装所有问答
+总览/目录/Mermaid     → notes/learn/<主题>入门.md
+精讲 Lx + 课内练习    → notes/learn/L{n}-*.md
+图解                  → notes/learn/L{n}-图解.md + assets
+规划页                → notes/learn/路径规划-*.md
+阶段/综合测验         → notes/quiz/Quiz-*.md
 ```
 
-反模式：用整文件覆盖 INDEX 塞进某一课正文；或开一堆课却不更新目录当前 ▶️。
+反模式：quiz 与 learn 混同一目录不分；覆盖 INDEX；目录不更新 ▶️/✅。
+
 
 ---
 

@@ -19,7 +19,7 @@ description: Use when planning a large subject curriculum, surveying public cour
 2. 抽取：受众与前置、讲次顺序、作业主题、核心 vs 选修  
 3. 写入 vault：`_agent/research/YYYY-MM-DD-*.md`  
 4. 结合学习者现状（小白/已有基础/时间）裁剪  
-5. 学生可见：`notes/classroom/路径规划-*.md`（新建，不覆盖旧总览）  
+5. 学生可见：`notes/learn/路径规划-*.md`（新建，不覆盖旧总览）  
 6. 再更新总览目录状态与后续 Lx 计划  
 
 ## 输出清单

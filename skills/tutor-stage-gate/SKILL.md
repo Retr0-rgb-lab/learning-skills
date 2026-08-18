@@ -24,7 +24,7 @@ scene **不**替代 phase：C 复习也可以 TEACH 一小块补丁。
 
 ```
 u = user_message
-f = classroom file
+f = learn/quiz file
 
 if u is 追问/为什么/什么意思:
   phase_action = FAQ
@@ -74,7 +74,7 @@ else:
 scene: A|B|C
 phase: GRADE|TEACH|...
 unit_id: L6a
-student_file: notes/classroom/...
+student_file: notes/learn/...
 awaiting_user: answer_in_classroom|free_reply|run_practice
 last_grade: pass|partial|fail|skip|null
 last_evidence_quote: "..."

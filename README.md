@@ -2,7 +2,7 @@
 
 AI-Native 一对一导师 skills。
 
-**大科目**：Research → Edge → Plan → Teach/Test（classroom-first）。  
+**大科目**：Research → Edge → Plan → Teach/Test（learn/quiz-first）。  
 **坐标**：scene A/B/C × phase × unit(Lx) 正交（`tutor-stage-gate`）。
 
 ## 安装
@@ -35,7 +35,8 @@ AI-Native 一对一导师 skills。
 
 ## 学生体验
 
-- INDEX：`notes/classroom/<主题>入门.md`  
+- INDEX：`notes/learn/<主题>入门.md`
+- 测验：`notes/quiz/Quiz-*.md`  
 - 当前课：`Lx-*.md`（目录 ▶️）  
 - 答在文件 → ok → 读文件批改 → 反馈模板追加  
 

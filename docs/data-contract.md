@@ -20,4 +20,4 @@
 
 详见 `schemas/`。
 
-**变更**：不再使用 `notes/user/`；学生界面仅为 `notes/classroom/`。
+**变更**：不再使用 `notes/user/`；学生界面仅为 `notes/learn/`。

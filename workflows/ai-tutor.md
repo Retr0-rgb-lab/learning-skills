@@ -1,56 +1,38 @@
-# Workflow: Research → Route → Plan → Teach/Test（Classroom-First）
+# Workflow: Research → Route → Plan → Teach/Test
 
 ## 学生可见
 
 ```text
-notes/classroom/
-  主题入门.md          # 稳定总览+目录
-  路径规划-*.md        # 大科目调研后
-  Lx-*.md              # 一课一文件
-  Lx-图解.md           # 可选
-_agent/                # 学生不必看
+notes/
+  learn/     # 总览、规划、Lx 精讲、图解、实践说明
+  quiz/      # 阶段/综合测验
+_agent/      # checkpoint / research（学生可不看）
 ```
 
 ## 双轴
 
-- **scene** A/B/C：节奏与测频（route）  
-- **phase/unit**：当前动作与哪一课（stage-gate + checkpoint）  
+- **scene** A/B/C  
+- **phase/unit** + 当前文件在 learn 或 quiz  
 
 ## 主流程
 
 ```
-新大学科 → curriculum-research → 路径规划页
-→ route(scene)
-→ probe? (自认小白可跳过题海)
-→ plan Mermaid 写入总览/规划页
-→ loop units:
-     open/create Lx file
-     teach-step
-     student answers in file
-     user: ok → stage-gate: GRADE
-     micro-quiz feedback append
-     pass → mark ✅ + next unit
-     partial/fail → remediate/FAQ stay
-→ quest gate / A 验收
+research → route → probe? → plan（写入 learn/）
+→ loop:
+     精讲单元 → notes/learn/Lx-*.md
+     阶段测验 → notes/quiz/Quiz-*.md
+     ok → read 文件 → grade → append 反馈
+     pass → 更新 learn/INDEX 目录状态
 ```
 
 ## 课中追问
 
-`tutor-faq-append`；phase 保持；不推进 unit。
+FAQ 追加到 **当前 learn 课文件**（或图解），不写到 quiz 除非在测。
 
-## 实践单元
+## 实践
 
-awaiting=run_practice → 用户跑代码 → ok → 读实验记录段批改。
+代码可在 `practice/`；说明与实验记录在 `notes/learn/L6a-*.md`。
 
-## 每回合
+## 每回合检查
 
-1. stage-gate 检测 phase_action  
-2. 执行单一动作  
-3. WRITE_BACK  
-4. 更新 checkpoint（含 last_grade）  
-5. 清单：NO CLOBBER / 读文件 / 反馈模板  
-
-## 详审计
-
-`docs/audit-stage-and-feedback.md`  
-`docs/lessons-from-cv-session.md`
+NO CLOBBER · 读对 learn/quiz 路径 · 反馈模板 · checkpoint.student_file 正确  

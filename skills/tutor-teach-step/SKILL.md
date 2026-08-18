@@ -1,6 +1,6 @@
 ---
 name: tutor-teach-step
-description: Use when teaching one reasoning step only in classroom file, single-step tutoring with short explanation then one check question.
+description: Use when teaching one reasoning step only in learn/quiz file, single-step tutoring with short explanation then one check question.
 ---
 
 # tutor-teach-step

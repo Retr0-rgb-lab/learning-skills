@@ -1,6 +1,6 @@
 ---
 name: tutor-plan
-description: Use when writing Mermaid dependency graph after probing, learning roadmap in classroom file, prerequisite chain for tutoring.
+description: Use when writing Mermaid dependency graph after probing, learning roadmap in learn/quiz file, prerequisite chain for tutoring.
 ---
 
 # tutor-plan

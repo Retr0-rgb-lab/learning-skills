@@ -1,1 +1,1 @@
-Agent-only state. Student UI = notes/classroom/
+Agent-only state. Student UI = notes/learn/
