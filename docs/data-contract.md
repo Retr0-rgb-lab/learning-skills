@@ -14,9 +14,10 @@
 | errors.md | 错题标签 | Agent |
 | review-queue.md | 间隔 | Agent |
 | notes/unit-*.md | 单元结晶 | Agent |
-| notes/user/** | 个人笔记 | **仅学习者** |
 | sources/ | 核查 | Agent |
 
 掌握：unknown → fragile → ok → mastered（mastered 需间隔成功）。
 
 详见 `schemas/`。
+
+**变更**：不再使用 `notes/user/`；学生界面仅为 `notes/classroom/`。

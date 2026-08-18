@@ -61,7 +61,7 @@ scene A/B/C 与 phase/unit **正交**（stage-gate）。
 
 ## IRON
 
-SINGLE STEP · GRAPH after edge · EVIDENCE GATE · NO CLOBBER · WRITE_BACK · FAQ_APPEND · OK_MEANS_READ_FILE · RESEARCH_FIRST(大科) · GOAL_LOCK · USER ZONE  
+SINGLE STEP · GRAPH after edge · EVIDENCE GATE · NO CLOBBER · WRITE_BACK · FAQ_APPEND · OK_MEANS_READ_FILE · RESEARCH_FIRST(大科) · GOAL_LOCK  
 
 GOAL_LOCK：用户宣布 A/考试/项目 → 规划页写验收表 + checkpoint.goal_level。
 

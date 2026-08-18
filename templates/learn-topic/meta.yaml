@@ -10,4 +10,3 @@ vault_mode: obsidian
 paths:
   quest: QUEST.md
   sessions: sessions/
-  user_notes: notes/user/

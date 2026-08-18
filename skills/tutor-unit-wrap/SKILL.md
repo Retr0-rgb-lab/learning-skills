@@ -20,6 +20,5 @@ description: Use when finishing a learning unit, exporting notes after mastery, 
 
 ## Rules
 
-- 不覆盖 `notes/user/**`  
 - 不自动开下一 unit，除非用户要继续  
 - 小结≤3 条给人看；机器细节在 yaml/sessions  

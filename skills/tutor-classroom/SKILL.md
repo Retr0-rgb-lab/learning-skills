@@ -14,7 +14,7 @@ description: Use when writing tutoring into Obsidian classroom files, multi-file
 5. **WRITE_BACK**：聊天讲过的要点必须落盘。  
 6. **FAQ_APPEND**：追问走答疑模板（见 `tutor-faq-append`）。  
 7. **VISUAL_SIDECAR**：重图解可 `L{n}-图解.md` + `assets-*/`。  
-8. **USER ZONE**：永不写 `notes/user/**`。  
+8. 学习过程以 **classroom** 为唯一学生界面（不作答进其它目录）。  
 
 ## 总览文件允许的改动
 

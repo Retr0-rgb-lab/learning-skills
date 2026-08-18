@@ -45,7 +45,6 @@ notes/classroom/
   L0-….md …             # 精讲+我的回答+反馈追加
   L5-CNN图解.md         # 可选 sidecar
   assets-*/             # svg/png
-notes/user/             # 禁止 Agent 写
 _agent/
   research/             # 公开课与复盘
   session-checkpoint.yaml

@@ -4,4 +4,4 @@
 
 - **Agent 可写**：回合日志（问/讲/答/评）
 - **结束蒸馏**：文首 YAML + `## Distill` 五块
-- 不要把这里当最终笔记；结晶放到 `notes/` 与 `notes/user/`
+- 不要把这里当最终笔记；结晶放到 classroom 课文件或 notes/ 导出
