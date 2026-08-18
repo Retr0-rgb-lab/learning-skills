@@ -43,6 +43,10 @@ fail_if: [致命误解]
 
 若题干未预埋：批改前 **先默写 2～4 条 must_hit** 再打分。
 
+**禁止**把 rubric/must_hit/fail_if 写进 `notes/quiz/` 或 `notes/learn/` 学生可见正文。
+标准放 `_agent/rubrics/*.yaml`（或仅导师侧记忆），学生卷面保持干净。
+出综合测时：**避免课内原题重贴**；换情境/换问法测同一考查点。
+
 ---
 
 ## Grade 定义
