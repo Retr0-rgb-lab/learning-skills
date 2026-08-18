@@ -1,41 +1,47 @@
 ---
 name: tutor-classroom
-description: Use when writing tutoring into Obsidian classroom files, multi-file lessons, roadmap index, append-only feedback, or notes/classroom workflow.
+description: Use when writing tutoring into Obsidian classroom files, multi-file lessons, roadmap index, append-only feedback, FAQ append, OK means read file, or notes/classroom workflow.
 ---
 
 # tutor-classroom
 
-## 铁律：不覆盖学生历史
+## 铁律
 
-1. **总览/路线图**（如 `CV入门.md`）= 稳定索引：可更新目录表状态，**禁止**用整文件重写清掉历史总览。  
-2. **每一层/每一课精讲** = **新建文件**（如 `L0-问题与任务.md`、`L1-….md`）。  
-3. 学生作答后：导师只在 **当课文件末尾追加** 反馈与下一题；**禁止**删改「我的回答」原文。  
-4. 需要大改结构时：新建 `…-v2.md` 或新课文件，旧文件保留。  
-5. 聊天里说明打开 **哪个新文件**；不要让学生只靠被覆盖的同一份文档回忆。
+1. **NO CLOBBER**：禁止用整文件 write 抹掉学生作答与旧讲解。  
+2. **INDEX+LESSON**：`主题入门.md` 稳定总览；精讲 `L{n}-标题.md` 新建。  
+3. **APPEND ONLY**：反馈、答疑、补图说明只追加。  
+4. **OK_MEANS_READ_FILE**：用户说 ok/好了 → 读文件作答区批改。  
+5. **WRITE_BACK**：聊天讲过的要点必须落盘。  
+6. **FAQ_APPEND**：追问走答疑模板（见 `tutor-faq-append`）。  
+7. **VISUAL_SIDECAR**：重图解可 `L{n}-图解.md` + `assets-*/`。  
+8. **USER ZONE**：永不写 `notes/user/**`。  
 
-## 推荐布局
+## 总览文件允许的改动
 
-```text
-notes/classroom/
-  README.md           # 目录说明
-  <主题>入门.md        # 总览 + Mermaid + 课表（稳定）
-  L0-….md             # 第0层精讲+答题
-  L1-….md
-notes/user/           # 仅学生
-_agent/               # 仅导师状态
+- 目录表里 **一行状态**（▶️/✅）  
+- 增加指向新文件的一行链接  
+- 文首一句指针（谨慎）  
+
+禁止：把总览改写成某一课正文。
+
+## 新课文件骨架
+
+```markdown
+---
+title: Lx …
+parent: 主题入门.md
+---
+# 标题
+## 目标
+## 讲解
+## 练习
+### 我的回答
+## 导师反馈（追加）
 ```
 
-## 写入动作
+## 批改
 
-| 事件 | 动作 |
-|------|------|
-| 出总览 | 写/更新索引文件（谨慎、保留正文） |
-| 开始新层/新步 | **create** 新 md |
-| 批改 | append 反馈到当课文件 |
-| 推进 | 索引课表改状态 + 新文件或同文件追加下一题 |
-
-## 禁止
-
-- `write` 整文件覆盖已有答题课文件  
-- 把多课内容反复塞进同一文件并抹掉旧讲解  
-- 覆盖 `notes/user/**`
+1. read 作答  
+2. append 反馈  
+3. 更新索引状态行  
+4. 更新 `_agent/session-checkpoint.yaml`  

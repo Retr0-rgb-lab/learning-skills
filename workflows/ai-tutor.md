@@ -66,3 +66,14 @@
 ```
 
 禁止跳过调研直接拍脑袋长路径（除非用户只要五分钟随口建议并知情）。
+
+## 每回合结束检查（CV 实战沉淀）
+
+1. NO CLOBBER？  
+2. WRITE_BACK / FAQ 已追加？  
+3. ok → 已读文件作答？  
+4. checkpoint 指向当前 Lx？  
+5. 大科目是否已 RESEARCH？  
+6. 目标 A/考试是否 GOAL_LOCK？  
+
+经验全文：`docs/lessons-from-cv-session.md`

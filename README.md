@@ -23,6 +23,7 @@
 | `tutor` | 四阶段编排 + classroom-first |
 | `tutor-classroom` | 课堂文件约定（不覆盖） |
 | `tutor-curriculum-research` | 大科目先调研公开课再规划 |
+| `tutor-faq-append` | 课中追问追加答疑到课堂文件 |
 | `tutor-probe` | 3～5 题定位边缘 |
 | `tutor-plan` | Mermaid 路线图 |
 | `tutor-teach-step` | 单步讲 |
@@ -35,3 +36,6 @@
 ## 铁律
 
 SINGLE STEP · GRAPH AFTER PROBE · EVIDENCE GATE · CLASSROOM-FIRST · 不覆盖 notes/user
+
+
+实战经验：[`docs/lessons-from-cv-session.md`](docs/lessons-from-cv-session.md)

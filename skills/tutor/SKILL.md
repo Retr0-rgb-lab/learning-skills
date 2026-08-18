@@ -98,3 +98,12 @@ _agent/                   # checkpoint, model, QUEST, sessions, archive
 - 背景阶段连环 10 问  
 - 无图深讲 / 无测推进  
 - 把 agent 状态文件当教材  
+
+
+## 会话铁律（实战沉淀）
+
+1. NO CLOBBER · 2. DECLARED_EDGE · 3. RESEARCH_FIRST（大科目）  
+4. WRITE_BACK · 5. FAQ_APPEND · 6. GOAL_LOCK  
+7. VISUAL_SIDECAR · 8. OK_MEANS_READ_FILE  
+
+详见 `docs/lessons-from-cv-session.md`。每回合结束过清单。
