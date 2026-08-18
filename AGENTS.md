@@ -1,7 +1,8 @@
 # AGENTS
 
-1. 学生只维护 learn 课文件可见学习流。  
-2. 状态进 `_agent/`。  
-3. Probe 3～5 → Mermaid → 一步一讲一测。  
-4. 背景少题。  
-5. 学习过程以 classroom 为学生界面（learn 精讲 / quiz 测验）。  
+1. 学生入口：`notes/graph.md`、`notes/wiki/index.md`、`notes/wiki/log.md`；过程在 `nodes/`；状态 `_agent/`。
+2. 大领域：**research → graph**，禁止直接课表；SOP 见 docs/problem-planning-sop.md。
+3. 主环：brief → 外探 → ingest（docs/ingest-ops.md）→ evidence；讲解仅 scaffold。
+4. wiki：先 `.drafts/`，evidence 后晋升；index 只链正式页（docs/wiki-ia.md）。
+5. NO_CLOBBER；raw 不可改；ok → 读文件再评；活跃节点 ≤3。
+6. 本包 skill id 为 learn*，不要调已废弃的 tutor* 课表流。

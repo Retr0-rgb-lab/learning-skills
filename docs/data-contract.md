@@ -1,23 +1,53 @@
-# 数据合约
+# 数据契约
 
-主题根：`learn/topics/<topic-id>/`（建议放在 Obsidian vault 内）
+## 节点状态
 
-| 文件 | 职责 | 谁写 |
-|------|------|------|
-| QUEST.md | 主问题方向盘 | 共创，Agent 更新 bites |
-| sessions/*.md | 回合全过程 | Agent 追加；Me 为学习者原话 |
-| meta.yaml | 主题元数据 | 双方 |
-| learner-model.yaml | 节点掌握+证据 | Agent |
-| dependency-graph.md | 底盘图 | Agent |
-| plan.md | unit 序（服务 quest） | Agent |
-| session-checkpoint.yaml | phase/quest_id/session_log | Agent |
-| errors.md | 错题标签 | Agent |
-| review-queue.md | 间隔 | Agent |
-| notes/unit-*.md | 单元结晶 | Agent |
-| sources/ | 核查 | Agent |
+```text
+unknown → open → exploring → drafted → evidenced → mastered
+                              ↘ debt
+```
 
-掌握：unknown → fragile → ok → mastered（mastered 需间隔成功）。
+| 状态 | 含义 |
+|------|------|
+| open | 图上可见，Brief 可极简 |
+| exploring | 已发完整 brief，等 raw |
+| drafted | 已 ingest，未过 evidence |
+| evidenced | 微测/实践/人审通过 |
+| mastered | review 提取仍稳 |
+| debt | 已知缺口 |
 
-详见 `schemas/`。
+## 边
 
-**变更**：不再使用 `notes/user/`；学生界面仅为 `notes/learn/`。
+- `requires` / `confusable_with` / `applies_in`
+- 每节点出边约 3–5
+
+## Research 产出（大领域强制）
+
+| 文件 | 内容 |
+|------|------|
+| `_agent/research/sources.md` | 主锚+对照，链接与用处 |
+| `_agent/research/candidate-questions.md` | 候选问题、依赖、采用/弃用 |
+
+## Checkpoint 最小字段
+
+```yaml
+topic: string
+goal_layer: orient|operate|master
+graph_file: notes/graph.md
+active_nodes: []  # ≤3
+student_file: path|null
+awaiting: pick_node|return_raw|answer|review|idle|research
+last_evidence: pass|partial|fail|null
+research_done: true|false
+goal_lock: string|null
+updated: date
+```
+
+## Evidence drafted→evidenced
+
+至少 2 条（Orient 可 1+人审）：微测 pass / 实践达标 / 用户确认 draft。
+
+## Wiki 页 status
+
+- draft：仅 `.drafts/`
+- verified：正式目录且 claims 已过 gate 或标清范围

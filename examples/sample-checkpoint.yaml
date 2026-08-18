@@ -1,14 +1,9 @@
-phase: TEACH_LOOP
-scene: B
-topic_id: bayes-theorem
-quest_id: q-001
-current_node_id: bayes-update-discrete
-unit_id: u02
-pending_quiz_id: null
-session_log: sessions/2026-08-18.md
-last_tutor_action: EXPLAIN_ONE
-awaiting_user: answer_quiz
-turn_budget_hint: 1
-turn_index: 3
-resume_hint: "先完成 bayes-update 出口题，再回 quest 医学情境题"
-updated_at: "2026-08-18T12:00:00Z"
+topic: 量子力学
+goal_layer: operate
+graph_file: notes/graph.md
+active_nodes: [Q1]
+student_file: notes/nodes/Q1-状态是什么.md
+awaiting: return_raw
+last_evidence: null
+goal_lock: null
+updated: 2026-08-19

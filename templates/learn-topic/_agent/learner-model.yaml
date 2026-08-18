@@ -1,6 +1,4 @@
-# learner-model.yaml（可选）
 priors: []
 misconceptions: []
 strengths: []
 goal_layer: operate
-notes: []

@@ -1,51 +1,51 @@
 # learning-skills
 
-AI-Native 一对一导师 skills。
-
-**大科目**：Research → Edge → Plan → Teach/Test（learn/quiz-first）。  
-**坐标**：scene A/B/C × phase × unit(Lx) 正交（`tutor-stage-gate`）。
+问题图学习包：**调研构图 → 外探 → 整理入库 → 证据门 → 复习**。
 
 ## 安装
 
 ```bash
-./scripts/install-skills.sh ~/.agents/skills
-# schemas/docs 仍以本仓库为准；skill 内路径指向本 repo 时请保留 checkout
+./scripts/install-skills.sh ~/.agents/skills --force
 ```
 
-## Skills 全图
+## 主循环
+
+```text
+route → research(大领域强制) → graph
+  → brief → 用户外探 → ingest → evidence
+  → scaffold? → review?
+```
+
+## Skills
 
 | Skill | 职责 |
 |-------|------|
-| `tutor` | 编排入口；强制调度子 skill |
-| `tutor-stage-gate` | 阶段/单元推进判定 |
-| `tutor-route` | A/B/C + quest |
-| `tutor-curriculum-research` | 公开课调研 |
-| `tutor-probe` | 3–5 题或自认边界 |
-| `tutor-plan` | Mermaid 路线 |
-| `tutor-classroom` | Obsidian IO；NO CLOBBER |
-| `tutor-teach-step` | 单步讲 |
-| `tutor-micro-quiz` | 评分反馈门控 |
-| `tutor-remediate` | 错因脚手架 |
-| `tutor-faq-append` | 追问落盘 |
-| `tutor-checkpoint` | checkpoint 读写 |
-| `tutor-obsidian-log` | 状态分离 + Distill |
-| `tutor-review` | 场景 C |
-| `tutor-factcheck` | 断言核查 |
-| `tutor-unit-wrap` | 课/单元收束 |
+| learn | 编排与大门控 |
+| learn-route | 目标层/先验 |
+| learn-research | 公开锚→候选问题 |
+| learn-graph | 问题图 |
+| learn-brief | 外探任务单 |
+| learn-ingest | 对话→draft wiki |
+| learn-evidence | 验收与晋升正式页 |
+| learn-scaffold | 卡住最小讲 |
+| learn-review | 复习队列 |
+| learn-classroom | vault IO |
+| learn-checkpoint | 状态 |
+| learn-factcheck | 硬核核查 |
 
-## 学生体验
+## 学生三入口
 
-- INDEX：`notes/learn/<主题>入门.md`
-- 测验：`notes/quiz/Quiz-*.md`  
-- 当前课：`Lx-*.md`（目录 ▶️）  
-- 答在文件 → ok → 读文件批改 → 反馈模板追加  
+1. `notes/graph.md`
+2. `notes/wiki/index.md`
+3. `notes/wiki/log.md`
 
-## 文档
+## 文档（必读）
 
-- [workflows/ai-tutor.md](workflows/ai-tutor.md)  
-- [docs/audit-stage-and-feedback.md](docs/audit-stage-and-feedback.md)  
-- [docs/lessons-from-cv-session.md](docs/lessons-from-cv-session.md)  
-- [docs/scenarios.md](docs/scenarios.md)  
+- [docs/problem-planning-sop.md](docs/problem-planning-sop.md) — 问题规划
+- [docs/wiki-ia.md](docs/wiki-ia.md) — 知识库怎么浏览/链
+- [docs/ingest-ops.md](docs/ingest-ops.md) — 对话怎么拆页
+- [docs/vault-layout.md](docs/vault-layout.md)
+- [workflows/learn-loop.md](workflows/learn-loop.md)
 
 ## License
 
