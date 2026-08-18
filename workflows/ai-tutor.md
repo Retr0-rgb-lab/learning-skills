@@ -1,79 +1,56 @@
-# Workflow: Probe → Plan → Teach → Test（Classroom-First）
+# Workflow: Research → Route → Plan → Teach/Test（Classroom-First）
 
-## 学生只看
+## 学生可见
 
-`notes/classroom/<主文件>.md`
-
-## Agent 只写（另册）
-
-`_agent/*`
-
-## 流程
-
-```
-新建主题
-→ 复制极简 classroom 壳（怎么学 + 薄背景 + 空探测区）
-→ Phase1 Probe：3～5 梯度题写在 classroom，答也在同文件
-→ 写「能力边界」表
-→ Phase2 Plan：Mermaid + 节点表写入 classroom
-→ 循环:
-     Phase3 当前节点极短讲
-     Phase4 一校验题
-     读作答 → pass 推进 / fail 修正
-→ 节点全过 → 收束 quest / 下一 quest
+```text
+notes/classroom/
+  主题入门.md          # 稳定总览+目录
+  路径规划-*.md        # 大科目调研后
+  Lx-*.md              # 一课一文件
+  Lx-图解.md           # 可选
+_agent/                # 学生不必看
 ```
 
-## 背景阶段
+## 双轴
 
-- 介绍从简  
-- **少题**；背景不是主战场  
-- 背景一够就 Probe 收束 → 出图  
+- **scene** A/B/C：节奏与测频（route）  
+- **phase/unit**：当前动作与哪一课（stage-gate + checkpoint）  
 
-## 每轮对用户聊天
-
-只说：打开哪个文件、答哪一题。  
-讲解与题干以 classroom 文件为准。
-
-## 与旧版差异
-
-| 旧 | 新 |
-|----|-----|
-| 多课堂文件 01/02/03 | 默认单主文件 |
-| 状态与教材混在根目录 | `_agent` vs `classroom` |
-| 背景连环问 | 背景薄、探测 3～5 题 |
-| 图可有可无 | 探测后必 Mermaid |
-
-## 自认小白快捷路径
+## 主流程
 
 ```
-用户声明 domain 小白
-→ 薄背景（可一段）
-→ 总体 Mermaid 路线 + 分层讲解（classroom 单文件）
-→ 用户点名某层后再 Teach+Test
-→ 禁止在总览前题海
+新大学科 → curriculum-research → 路径规划页
+→ route(scene)
+→ probe? (自认小白可跳过题海)
+→ plan Mermaid 写入总览/规划页
+→ loop units:
+     open/create Lx file
+     teach-step
+     student answers in file
+     user: ok → stage-gate: GRADE
+     micro-quiz feedback append
+     pass → mark ✅ + next unit
+     partial/fail → remediate/FAQ stay
+→ quest gate / A 验收
 ```
 
-## 大科目路径：先调研再规划
+## 课中追问
 
-```
-新增大学科（如 CV）
-→ tutor-curriculum-research
-   · subagents/web：CS231n 等 schedule
-   · 写 _agent/research/
-→ 结合学习者 edge 裁剪
-→ classroom/路径规划-*.md + Mermaid
-→ 再按层新建 Lx 精讲文件
-```
+`tutor-faq-append`；phase 保持；不推进 unit。
 
-禁止跳过调研直接拍脑袋长路径（除非用户只要五分钟随口建议并知情）。
+## 实践单元
 
-## 每回合结束检查（CV 实战沉淀）
+awaiting=run_practice → 用户跑代码 → ok → 读实验记录段批改。
 
-1. NO CLOBBER？  
-2. WRITE_BACK / FAQ 已追加？  
-3. ok → 已读文件作答？  
-4. checkpoint 指向当前 Lx？  
-5. 大科目是否已 RESEARCH？  
-6. 目标 A/考试是否 GOAL_LOCK？  
+## 每回合
 
-经验全文：`docs/lessons-from-cv-session.md`
+1. stage-gate 检测 phase_action  
+2. 执行单一动作  
+3. WRITE_BACK  
+4. 更新 checkpoint（含 last_grade）  
+5. 清单：NO CLOBBER / 读文件 / 反馈模板  
+
+## 详审计
+
+`docs/audit-stage-and-feedback.md`  
+`docs/lessons-from-cv-session.md`

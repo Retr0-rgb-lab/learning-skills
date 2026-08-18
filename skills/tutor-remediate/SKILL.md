@@ -45,3 +45,8 @@ description: Use when learner fails a quiz, is stuck, needs scaffolding, error c
 ## Struggle budget
 
 允许有限次有效失败；超过则降阶任务结构，而不是直接给最终答案（除非安全/时间硬约束）。
+
+
+## 入口
+由 `tutor-micro-quiz` 在 grade=fail 或 partial+foundation/wrong_schema 时调用。
+批改反馈里必须带 error_tag。
