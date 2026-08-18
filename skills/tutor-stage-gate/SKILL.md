@@ -12,7 +12,7 @@ description: Use when deciding tutoring phase transitions, whether to advance le
 | **scene** | A 入门 / B 续学 / C 复习 | route；低频变 |
 | **phase** | ROUTE·RESEARCH·PROBE·PLAN·TEACH·GRADE·REMEDIATE·REVIEW·GATE | 每回合 |
 | **unit** | Lx 文件 id / node_id | 课级 |
-| **awaiting** | answer_in_classroom / free_reply / run_practice / confirm_plan | 每回合 |
+| **awaiting** | answer_in_classroom / free_reply / run_practice / pick_node | 每回合 |
 
 scene **不**替代 phase：C 复习也可以 TEACH 一小块补丁。
 

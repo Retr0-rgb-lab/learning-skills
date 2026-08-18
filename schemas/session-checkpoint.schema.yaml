@@ -1,14 +1,24 @@
-# session-checkpoint.yaml
+# _agent/session-checkpoint.yaml — single source under vault root
+
 scene: A | B | C
-phase: ROUTE | RESEARCH | PROBE | PLAN | TEACH | GRADE | REMEDIATE | REVIEW | GATE | FAQ
+phase: ROUTE | RESEARCH | PROBE | PLAN | TEACH | GRADE | REMEDIATE | REVIEW | FAQ | GATE | CLOSE
 unit_id: string | null
-student_file: string
-awaiting_user: free_reply | answer_in_classroom | run_practice | confirm_plan | none
+student_file: string | null
+index_file: string | null
+quest_id: string | null
+current_node_id: string | null
+pending_quiz_id: string | null
+# 统一用 classroom 作答语义；answer_quiz 为别名兼容
+awaiting_user: none | free_reply | answer_in_classroom | answer_probe | answer_review | pick_node | run_practice | confirm_goal
 last_grade: pass | partial | fail | skip | null
 last_evidence_quote: string | null
+last_tutor_action: string | null
 a_level_debt: [string]
-pending_quiz_id: string | null
-quest_id: string | null
-goal_level: browse | working | A | null
+goal_level: browse | working | A | exam | project | null
+research_status: not_needed | pending | done
+probe_index: int
+probe_target_n: int
+fail_count_on_node: int
+scene_stack: [string]
 turn_budget_hint: 1
 updated_at: ISO-8601

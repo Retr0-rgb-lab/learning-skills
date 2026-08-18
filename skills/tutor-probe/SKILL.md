@@ -19,3 +19,10 @@ description: Use when probing knowledge edge with 3-5 gradient questions, binary
 - 将 edge 记为 domain_beginner  
 - **下一步直接 Phase 2**：总体 Mermaid 学习路径 + 分层讲解  
 - 测验留到各节点精讲之后，而不是总览之前  
+
+
+## 子循环（SINGLE STEP）
+
+- 每回合 **只出 1 题**
+- checkpoint: `probe_index++`；达 `probe_target_n` 或 edge 稳定或 DECLARED → phase=PLAN
+- 禁止一回合甩 3～5 题全文

@@ -112,3 +112,17 @@ checkpoint schema 有字段，**无转移表**。
 - schemas 路径 → remediate 内联 tags  
 
 仍 P1：grades.jsonl、题面预埋 rubric 工具化、install 时打包 schemas。
+
+## 阶段机子代理 S1–S7 对齐
+
+| ID | 状态 |
+|----|------|
+| 转移表 | stage-gate + tutor must-load |
+| DECLARED_EDGE vs A→PROBE | route 判定树已修 |
+| awaiting 枚举 | schema 统一 answer_in_classroom 等 |
+| confirm_plan 错位 | 改为 pick_node / confirm_goal |
+| micro-quiz 判据 | 已重写 |
+| checkpoint 空心 | skill 已扩 |
+| B/C 接入 | route 树 + review；workflow 仍可再分列 |
+
+仍 P1：probe 子循环 probe_index 每回合 1 题写进 probe skill；scene_stack 实战演练。
