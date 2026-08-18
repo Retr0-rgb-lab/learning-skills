@@ -33,22 +33,22 @@ description: Use when one-on-one tutoring, classroom markdown learning, Obsidian
 ## Phase 细节
 
 ### Phase 1 Probe
-- 3～5 题，由易到难或中位试探  
-- 选择题/短答均可；允许「不会」  
-- 输出：edge 节点 + 已会列表 → 写入 classroom 简短「能力边界」表 + `_agent/learner-model.yaml`
+- 若用户 **明确自认该领域小白/零基础**：视为 edge 已声明，**禁止题海确认**；直接薄背景 + 总体路线  
+- 否则 3～5 题，由易到难或中位试探；允许「不会」  
+- 输出：edge + 已会列表 → classroom「能力边界」+ `_agent/learner-model.yaml`
 
 ### Phase 2 Plan
-- Mermaid 依赖图写入 **classroom 正文**（学生看得到）  
-- 节点表：状态 ✅/▶️/锁定 + 每节点「你需要能做到」  
+- **优先交付**：总体 Mermaid 学习路径 + 分层人话讲解（写入 classroom）  
+- 总览阶段默认 **不测验**；用户点名某层后再进入精讲  
 - `_agent` 存机器可读镜像  
 
 ### Phase 3 Teach
-- 当前节点：极短讲解（可 LaTeX/图）+ **一** 道校验  
-- 禁止大段教程倾倒  
+- 仅在用户进入某层/节点后：每次一个推理步  
+- 极短讲解（可 LaTeX/图）；禁止总览阶段连环问  
 
 ### Phase 4 Test & calibrate
-- 答对/证明理解 → 下一节点  
-- 偏差 → 同节点换讲法或回退前置；更新图状态  
+- 精讲节点后才小测；过了才前进  
+- 「懂了」无作答不推进  
 
 ## 文件布局（vault）
 
