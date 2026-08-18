@@ -1,105 +1,44 @@
-# Workflow: AI-Native 一对一导师（Quest + Obsidian）
+# Workflow: Probe → Plan → Teach → Test（Classroom-First）
 
-编排：`tutor`。日志：`tutor-obsidian-log`。
+## 学生只看
 
-## 心智模型
+`notes/classroom/<主文件>.md`
 
-```
-方向盘 QUEST（真问题）
-   ↓ 激活
-底盘 GRAPH（前置门控）
-   ↓ 单步
-尝试 → 缺口 → 补 → 再咬 QUEST
-   ↓ 每回合
-sessions/*.md 追加 Turn（Tutor / Me / Result）
-   ↓ 结束
-Distill 五条 + Progress bite
-```
+## Agent 只写（另册）
 
-## 0. 启动
+`_agent/*`
+
+## 流程
 
 ```
-无 learn/topics/<id>/ → 复制 templates/learn-topic
-读 checkpoint + QUEST.md Active
-无 Active.statement → 共创 quest（一句问题 + success）
-创建/打开 sessions/YYYY-MM-DD.md
-checkpoint.session_log = 该路径
+新建主题
+→ 复制极简 classroom 壳（怎么学 + 薄背景 + 空探测区）
+→ Phase1 Probe：3～5 梯度题写在 classroom，答也在同文件
+→ 写「能力边界」表
+→ Phase2 Plan：Mermaid + 节点表写入 classroom
+→ 循环:
+     Phase3 当前节点极短讲
+     Phase4 一校验题
+     读作答 → pass 推进 / fail 修正
+→ 节点全过 → 收束 quest / 下一 quest
 ```
 
-## 1. ROUTE
+## 背景阶段
 
-A/B/C + 绑定 quest_id → 一句确认。
+- 介绍从简  
+- **少题**；背景不是主战场  
+- 背景一够就 Probe 收束 → 出图  
 
-## 2. PROBE
+## 每轮对用户聊天
 
-从 quest 反推链；二分/打假/抽样 → edge；**每题 log Turn**。
+只说：打开哪个文件、答哪一题。  
+讲解与题干以 classroom 文件为准。
 
-## 3. PLAN
+## 与旧版差异
 
-图为 quest 服务；`activated_nodes`；plan objective 引用 quest；confirm。
-
-**门禁**：无图不 TEACH。
-
-## 4. TEACH_LOOP
-
-```
-选 ready 节点（在 activated 路径上）
-→ teach-step（半句 quest 锚 + 任务 + 停）
-→ log Tutor
-→ 用户答 → log Me
-→ quiz/grade → log Result
-→ pass：更新节点；择机再咬 quest
-→ fail：remediate → 新题
-```
-
-SINGLE STEP 不破；EVIDENCE GATE 不破。
-
-## 5. REVIEW_LOOP
-
-quest = 真题/错题簇；先测；P0 优先；log 全。
-
-## 6. CLOSE
-
-1. Distill 五条  
-2. QUEST Progress bites（无咬合必须写明）  
-3. review-queue + resume_hint  
-4. 可选 unit notes；**不写 notes/user**  
-
-## Obsidian 布局（topic 根）
-
-```text
-QUEST.md                 # 主问题
-sessions/YYYY-MM-DD.md   # 过程（Agent 追加）
-session-checkpoint.yaml
-dependency-graph.md
-learner-model.yaml
-plan.md
-errors.md
-review-queue.md
-notes/unit-*.md          # 蒸馏结晶
-notes/user/**            # 仅学习者
-sources/
-```
-
-## 对抗验收
-
-| 用例 | 期望 |
-|------|------|
-| 催全讲 | 极简图+单步；仍 log |
-| 只回懂了 | 强制题；不解锁 |
-| 继续 | 恢复 quest+phase；读 session |
-| 只走节点不回 quest | CLOSE 标未咬合；下次先咬 |
-| 写 user 笔记 | 拒绝覆盖 |
-
-## 伪代码
-
-```
-cp, quest = load()
-open_session_log()
-loop:
-  act = one_allowed_action(cp.phase)
-  do(act)
-  log_turn(tutor, me, result)
-  save(cp)
-  if user_done: distill(); bite(); break
-```
+| 旧 | 新 |
+|----|-----|
+| 多课堂文件 01/02/03 | 默认单主文件 |
+| 状态与教材混在根目录 | `_agent` vs `classroom` |
+| 背景连环问 | 背景薄、探测 3～5 题 |
+| 图可有可无 | 探测后必 Mermaid |

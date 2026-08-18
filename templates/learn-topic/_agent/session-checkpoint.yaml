@@ -1,0 +1,5 @@
+phase: PROBE
+student_file: notes/classroom/MAIN.md
+current_node_id: null
+awaiting_user: answer_in_classroom
+turn_budget_hint: 1

@@ -1,8 +1,7 @@
-# AGENTS.md
+# AGENTS
 
-1. `description` 只写触发，不写流程摘要。  
-2. 铁律不可删：SINGLE STEP / GRAPH BEFORE TEACH / EVIDENCE GATE / QUEST DRIVES / OBSIDIAN LOG / USER ZONE。  
-3. schema 变更同步 `schemas/` 与 `templates/learn-topic/`。  
-4. 新 skill 挂 README + workflows/ai-tutor.md。  
-5. 禁止写入 `notes/user/**`。  
-6. 学科内容不进通用 skill。  
+1. 学生只维护 classroom 主文件可见学习流。  
+2. 状态进 `_agent/`。  
+3. Probe 3～5 → Mermaid → 一步一讲一测。  
+4. 背景少题。  
+5. 不覆盖 notes/user。  
