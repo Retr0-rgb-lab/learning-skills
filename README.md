@@ -1,6 +1,8 @@
 # learning-skills
 
-AI-Native 一对一导师：**Probe → Plan(Mermaid) → Teach(one step) → Test(gate)**。
+学习的功能本质是拓宽认知边界，学习的模式本质是循环。
+
+探索认知边界 -> 知识Mermaid图谱生成 -> 概念解析 -> 回答问题 -> 反馈
 
 ## 学生体验
 
