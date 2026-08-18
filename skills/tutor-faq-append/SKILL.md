@@ -19,8 +19,9 @@ description: Use when the learner asks a mid-lesson clarification, misconception
 ## 怎么写
 
 1. 定位文件：当前 `Lx-*.md` 或 `Lx-*-图解.md`  
-2. **只 append**，不改「我的回答」原文  
-3. 模板：
+2. **只追加、不覆盖**「我的回答」原文  
+3. **位置：紧挨问题来源**（代码块下、该小节内、该题正下方）；**禁止**默认堆到文末大「答疑区」  
+4. 模板：
 
 ```markdown
 ## 答疑 · {标题}（日期）
@@ -35,8 +36,8 @@ description: Use when the learner asks a mid-lesson clarification, misconception
 > {可背诵的收束}
 ```
 
-4. 稳定误解 → `_agent/learner-model.yaml` misconceptions  
-5. 聊天：浓缩答复 + 已写入路径  
+5. 稳定误解 → `_agent/learner-model.yaml` misconceptions  
+6. 聊天：浓缩答复 + 已写入路径  
 
 ## 反模式
 
