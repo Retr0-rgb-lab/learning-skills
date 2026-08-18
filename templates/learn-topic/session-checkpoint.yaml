@@ -1,11 +1,14 @@
 phase: ROUTE
 scene: A
 topic_id: REPLACE_ME
+quest_id: q-001
 current_node_id: null
 unit_id: null
 pending_quiz_id: null
+session_log: null
 last_tutor_action: ROUTE
 awaiting_user: free_reply
 turn_budget_hint: 1
+turn_index: 0
 resume_hint: null
 updated_at: ""

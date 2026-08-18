@@ -1,6 +1,13 @@
 topic_id: REPLACE_ME
 title: ""
 created_at: ""
-goal: ""   # 可观察行为，如「能独立手算离散贝叶斯更新」
+# 主题级默认目标；当前啃的真问题以 QUEST.md Active 为准
+goal: ""
 depth: working   # browse | working | teach_others
 timebox: ""
+vault_mode: obsidian
+# 相对本 topic 根
+paths:
+  quest: QUEST.md
+  sessions: sessions/
+  user_notes: notes/user/

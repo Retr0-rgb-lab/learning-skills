@@ -4,11 +4,14 @@
 phase: ROUTE | PROBE | PLAN | TEACH_LOOP | REVIEW_LOOP | CLOSE
 scene: A | B | C
 topic_id: string
+quest_id: string | null          # 指向 QUEST.md Active
 current_node_id: string | null
 unit_id: string | null
 pending_quiz_id: string | null
-last_tutor_action: ROUTE | PROBE_ITEM | SHOW_PLAN | EXPLAIN_ONE | QUIZ | GRADE | REMEDIATE | REVIEW_ITEM | CHECKPOINT | WRAP
+session_log: string | null       # 如 sessions/2026-08-18.md
+last_tutor_action: ROUTE | PROBE_ITEM | SHOW_PLAN | EXPLAIN_ONE | QUIZ | GRADE | REMEDIATE | REVIEW_ITEM | CHECKPOINT | WRAP | LOG_TURN
 awaiting_user: free_reply | answer_probe | answer_quiz | confirm_plan | none
-turn_budget_hint: 1   # IRON: 每回合只完成一个教学动作
+turn_budget_hint: 1
+turn_index: int                  # 当前 session 回合号
 resume_hint: string | null
 updated_at: ISO-8601

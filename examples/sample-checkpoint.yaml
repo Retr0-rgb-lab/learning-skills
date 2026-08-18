@@ -1,11 +1,14 @@
 phase: TEACH_LOOP
 scene: B
 topic_id: bayes-theorem
+quest_id: q-001
 current_node_id: bayes-update-discrete
 unit_id: u02
 pending_quiz_id: null
+session_log: sessions/2026-08-18.md
 last_tutor_action: EXPLAIN_ONE
 awaiting_user: answer_quiz
 turn_budget_hint: 1
-resume_hint: "先完成 bayes-update-discrete 的出口题"
+turn_index: 3
+resume_hint: "先完成 bayes-update 出口题，再回 quest 医学情境题"
 updated_at: "2026-08-18T12:00:00Z"

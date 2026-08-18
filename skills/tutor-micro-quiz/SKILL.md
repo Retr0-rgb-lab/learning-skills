@@ -7,67 +7,28 @@ description: Use when checking mastery after teaching, micro-quiz, retrieval pra
 
 ## Overview
 
-提取练习是学习事件。掌握只认证据。本 skill 含出题 + 评分协议。
+提取即学习。掌握只认证据。题与判定完整写入 session 日志。
 
-## When to quiz
+## When
 
-- EXPLAIN_ONE 之后  
-- 用户只回「懂了/ok/嗯/继续」→ **强制** 30 秒提取题  
-- 节点 exit_check；B 入口唤醒；C 题组  
+讲解后；「懂了/ok/继续」；exit_check；B 唤醒；C 题组。
 
-## Item design
+## Design
 
-优先：短答 / 步骤 / Feynman 口述 / 变式 / 判断+改错  
-慎用：刚讲过的原句再认  
+优先短答/步骤/Feynman/变式/改错。  
+对用户只给题干；rubric 不预泄。  
+能出 **quest 情境题** 优于裸定义背诵。
 
-对用户只呈现题干（与选项）；**rubric 与答案不对用户预泄**。
+## Grade
 
-内部结构：
+pass / partial / fail → 更新 model；fail → errors.md + remediate。  
+禁止因流畅复述而 pass。  
+`ok` 当堂 L0；`mastered` 需间隔后再提。
 
-```text
-id, stem, type, rubric[], misconceptions{}, difficulty, node_id
-```
+## Feedback
 
-- 对齐**本步组块**，非整章  
-- 针对 known misconceptions 设诱答  
-- 选择项等长  
+短判定 →（必要时）思路 → 一点拨 → 可选一句规则复盘。
 
-## Grading
+## Log
 
-| result | 条件 | 动作 |
-|--------|------|------|
-| pass | 命中 rubric 要点，独立 | 节点→ok（或累计证据）；可解锁后继 |
-| partial | 部分要点 | 一级提示；同级新题 |
-| fail | 关键错误/空白 | 写 errors.md；remediate |
-
-**禁止**：因语气流利、感谢、复述讲解原句而 pass；条件用错即使句子像 → fail/partial。
-
-### Mastery
-
-- `ok`：当堂 L0 独立通过（建议含 1 变式）  
-- `mastered`：ok + **间隔后**再提取成功  
-- 自评永不直接 mastered  
-
-confidence **只**由 evidence 更新。
-
-## Feedback order
-
-1. 对/不对/部分（短）  
-2. 「你当时怎么想的？」（需要时）  
-3. 一点拨（不泄下一节点）  
-4. 要求 1 句规则复盘（可选）  
-
-## Errors log entry
-
-```markdown
-## [ISO] node= | quiz=
-- 题干摘要:
-- 用户答案:
-- 正确要点:
-- 误区标签: []
-- 补救策略:
-```
-
-## Checkpoint
-
-`last_tutor_action: QUIZ|GRADE`，`awaiting_user: answer_quiz` → 提交后 grade → `free_reply`。
+Me 原话 + result + tags → `tutor-obsidian-log` Turn。

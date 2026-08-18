@@ -1,89 +1,105 @@
-# Workflow: AI-Native 一对一导师
+# Workflow: AI-Native 一对一导师（Quest + Obsidian）
 
-编排 skill：`tutor`。原子 skill 见 `skills/`。
+编排：`tutor`。日志：`tutor-obsidian-log`。
+
+## 心智模型
+
+```
+方向盘 QUEST（真问题）
+   ↓ 激活
+底盘 GRAPH（前置门控）
+   ↓ 单步
+尝试 → 缺口 → 补 → 再咬 QUEST
+   ↓ 每回合
+sessions/*.md 追加 Turn（Tutor / Me / Result）
+   ↓ 结束
+Distill 五条 + Progress bite
+```
 
 ## 0. 启动
 
 ```
-若无 learn/topics/<id>/:
-  复制 templates/learn-topic → learn/topics/<id>/
-  替换 REPLACE_ME，填 meta.goal
-load session-checkpoint.yaml
+无 learn/topics/<id>/ → 复制 templates/learn-topic
+读 checkpoint + QUEST.md Active
+无 Active.statement → 共创 quest（一句问题 + success）
+创建/打开 sessions/YYYY-MM-DD.md
+checkpoint.session_log = 该路径
 ```
 
-## 1. ROUTE（tutor-route）
+## 1. ROUTE
 
-判定 A/B/C → 写 scene/phase → 对用户一句确认。
+A/B/C + 绑定 quest_id → 一句确认。
 
-## 2. PROBE（tutor-probe）
+## 2. PROBE
 
-| scene | 做法 |
-|-------|------|
-| A | 目标 + 前备 + 二分 3–7 题；小图 5–9 |
-| B | 进度回收 + 对「已会」闭卷打假 + 断点 |
-| C | 时间盒 + 抽样诊断 → P0/P1/P2 |
+从 quest 反推链；二分/打假/抽样 → edge；**每题 log Turn**。
 
-退出：edge_nodes + goal 可执行。
+## 3. PLAN
 
-## 3. PLAN（tutor-plan [+ factcheck]）
+图为 quest 服务；`activated_nodes`；plan objective 引用 quest；confirm。
 
-1. 写 dependency-graph.md（mermaid 强制）  
-2. 写 plan.md units + exit_check  
-3. 关键 claims → tutor-factcheck（可选）  
-4. 用户 confirm_plan  
-
-**门禁**：无图 → 禁止 TEACH。
+**门禁**：无图不 TEACH。
 
 ## 4. TEACH_LOOP
 
 ```
-select ready node
-→ tutor-teach-step（单组块 + 任务 + 停）
-→ tutor-micro-quiz（出题）
-→ 用户作答
-→ grade
-   pass → update model/graph; next node or unit-wrap
-   fail → tutor-remediate → 新题验证
+选 ready 节点（在 activated 路径上）
+→ teach-step（半句 quest 锚 + 任务 + 停）
+→ log Tutor
+→ 用户答 → log Me
+→ quiz/grade → log Result
+→ pass：更新节点；择机再咬 quest
+→ fail：remediate → 新题
 ```
 
-SINGLE STEP：讲解回合与评分回合可分；禁止一回合讲完并公布答案再进下一概念。
+SINGLE STEP 不破；EVIDENCE GATE 不破。
 
-## 5. REVIEW_LOOP（场景 C 或队列到期）
+## 5. REVIEW_LOOP
 
-`tutor-review`：先测 → 手术刀补丁 → 更新 queue。
+quest = 真题/错题簇；先测；P0 优先；log 全。
 
 ## 6. CLOSE
 
-`tutor-unit-wrap` + `tutor-checkpoint`：
+1. Distill 五条  
+2. QUEST Progress bites（无咬合必须写明）  
+3. review-queue + resume_hint  
+4. 可选 unit notes；**不写 notes/user**  
 
-- 边界移动  
-- 薄弱点  
-- resume_hint  
-- review-queue 行  
+## Obsidian 布局（topic 根）
+
+```text
+QUEST.md                 # 主问题
+sessions/YYYY-MM-DD.md   # 过程（Agent 追加）
+session-checkpoint.yaml
+dependency-graph.md
+learner-model.yaml
+plan.md
+errors.md
+review-queue.md
+notes/unit-*.md          # 蒸馏结晶
+notes/user/**            # 仅学习者
+sources/
+```
 
 ## 对抗验收
 
 | 用例 | 期望 |
 |------|------|
-| 「别测了直接全讲」 | 仍先极简图；单步；穿插提取 |
-| 只回「懂了」 | 强制 micro-quiz，不解锁 |
-| 中断后「继续」 | 读 checkpoint，不重头第一章 |
-| 一处不会 | 局部回退，不整科回炉 |
+| 催全讲 | 极简图+单步；仍 log |
+| 只回懂了 | 强制题；不解锁 |
+| 继续 | 恢复 quest+phase；读 session |
+| 只走节点不回 quest | CLOSE 标未咬合；下次先咬 |
+| 写 user 笔记 | 拒绝覆盖 |
 
-## Agent 伪代码
+## 伪代码
 
 ```
+cp, quest = load()
+open_session_log()
 loop:
-  cp = load_checkpoint()
-  assert cp.turn_budget_hint == 1
-  match cp.phase:
-    ROUTE: route()
-    PROBE: probe_turn()
-    PLAN: plan_or_await_confirm()
-    TEACH_LOOP:
-      if cp.awaiting_user == answer_quiz: grade_turn()
-      else: teach_or_quiz_turn()
-    REVIEW_LOOP: review_turn()
-    CLOSE: wrap(); break
-  save_checkpoint()
+  act = one_allowed_action(cp.phase)
+  do(act)
+  log_turn(tutor, me, result)
+  save(cp)
+  if user_done: distill(); bite(); break
 ```
