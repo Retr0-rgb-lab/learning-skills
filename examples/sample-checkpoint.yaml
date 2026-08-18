@@ -1,0 +1,11 @@
+phase: TEACH_LOOP
+scene: B
+topic_id: bayes-theorem
+current_node_id: bayes-update-discrete
+unit_id: u02
+pending_quiz_id: null
+last_tutor_action: EXPLAIN_ONE
+awaiting_user: answer_quiz
+turn_budget_hint: 1
+resume_hint: "先完成 bayes-update-discrete 的出口题"
+updated_at: "2026-08-18T12:00:00Z"

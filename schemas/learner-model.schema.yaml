@@ -1,0 +1,26 @@
+# learner-model.yaml
+
+topic: string
+updated_at: ISO-8601
+global:
+  goal: string                    # 可观察表现型目标
+  prior_level: string             # 自报，仅先验
+  preferred_modality: [string]
+  frustration_signals: int
+nodes:
+  - id: string
+    status: unknown | fragile | ok | mastered | learning | blocked
+    # confidence 仅来自测验证据，非自评
+    confidence: 0.0-1.0
+    evidence:
+      - type: quiz | probe | transfer | feynman
+        at: ISO-8601
+        result: pass | partial | fail
+        item_id: string
+    last_seen: ISO-8601 | null
+    next_review: ISO-8601 | null
+    fail_count: int
+    error_tags: [string]
+    notes: string
+edge_nodes: [string]              # 当前认知边缘
+misconceptions: [string]
