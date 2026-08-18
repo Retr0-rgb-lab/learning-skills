@@ -11,7 +11,9 @@ description: Use when learner fails a quiz, is stuck, needs scaffolding, error c
 
 ## Error tags
 
-见 `schemas/error-tags.md`：slip / procedure / concept / foundation / decay / illusion / wrong_schema / patchy / language / overgeneralize
+见仓库 `schemas/error-tags.md`（安装到 ~/.agents 时请同时可读该仓库或下方内联）
+
+内联：slip procedure concept foundation decay illusion wrong_schema patchy language overgeneralize a_level_debt：slip / procedure / concept / foundation / decay / illusion / wrong_schema / patchy / language / overgeneralize
 
 ## Scaffold ladder (L0–L5)
 

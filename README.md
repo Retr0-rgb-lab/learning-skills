@@ -1,44 +1,51 @@
 # learning-skills
 
-学习的功能本质是拓宽认知边界，学习的模式本质是循环。
+AI-Native 一对一导师 skills。
 
-探索认知边界 -> 知识Mermaid图谱生成 -> 概念解析 -> 回答问题 -> 反馈
-
-## 学生体验
-
-- **只看** vault 里 `notes/classroom/` 主文件  
-- 提问与回答在同一文件  
-- 状态在 `_agent/`（学生不必看）  
+**大科目**：Research → Edge → Plan → Teach/Test（classroom-first）。  
+**坐标**：scene A/B/C × phase × unit(Lx) 正交（`tutor-stage-gate`）。
 
 ## 安装
 
 ```bash
 ./scripts/install-skills.sh ~/.agents/skills
+# schemas/docs 仍以本仓库为准；skill 内路径指向本 repo 时请保留 checkout
 ```
 
-## 核心 skills
+## Skills 全图
 
-| Skill | 作用 |
+| Skill | 职责 |
 |-------|------|
-| `tutor` | 四阶段编排 + classroom-first |
-| `tutor-classroom` | 课堂文件约定（不覆盖） |
-| `tutor-curriculum-research` | 大科目先调研公开课再规划 |
-| `tutor-faq-append` | 课中追问追加答疑到课堂文件 |
-| `tutor-stage-gate` | 阶段/单元推进判定与 scene×phase 正交 |
-| `tutor-probe` | 3～5 题定位边缘 |
-| `tutor-plan` | Mermaid 路线图 |
+| `tutor` | 编排入口；强制调度子 skill |
+| `tutor-stage-gate` | 阶段/单元推进判定 |
+| `tutor-route` | A/B/C + quest |
+| `tutor-curriculum-research` | 公开课调研 |
+| `tutor-probe` | 3–5 题或自认边界 |
+| `tutor-plan` | Mermaid 路线 |
+| `tutor-classroom` | Obsidian IO；NO CLOBBER |
 | `tutor-teach-step` | 单步讲 |
-| `tutor-micro-quiz` | 步后校验门控 |
-| `tutor-checkpoint` | `_agent` 检查点 |
-| `tutor-obsidian-log` | 状态与课堂分离 |
+| `tutor-micro-quiz` | 评分反馈门控 |
+| `tutor-remediate` | 错因脚手架 |
+| `tutor-faq-append` | 追问落盘 |
+| `tutor-checkpoint` | checkpoint 读写 |
+| `tutor-obsidian-log` | 状态分离 + Distill |
+| `tutor-review` | 场景 C |
+| `tutor-factcheck` | 断言核查 |
+| `tutor-unit-wrap` | 课/单元收束 |
 
-全文 SOP：`workflows/ai-tutor.md`
+## 学生体验
 
-## 铁律
+- INDEX：`notes/classroom/<主题>入门.md`  
+- 当前课：`Lx-*.md`（目录 ▶️）  
+- 答在文件 → ok → 读文件批改 → 反馈模板追加  
 
-SINGLE STEP · GRAPH AFTER PROBE · EVIDENCE GATE · CLASSROOM-FIRST · 不覆盖 notes/user
+## 文档
 
+- [workflows/ai-tutor.md](workflows/ai-tutor.md)  
+- [docs/audit-stage-and-feedback.md](docs/audit-stage-and-feedback.md)  
+- [docs/lessons-from-cv-session.md](docs/lessons-from-cv-session.md)  
+- [docs/scenarios.md](docs/scenarios.md)  
 
-实战经验：[`docs/lessons-from-cv-session.md`](docs/lessons-from-cv-session.md)
+## License
 
-审计：[docs/audit-stage-and-feedback.md](docs/audit-stage-and-feedback.md)
+MIT

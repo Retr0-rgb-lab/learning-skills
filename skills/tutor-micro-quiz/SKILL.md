@@ -115,5 +115,5 @@ else: grade=partial
 append_feedback_template(...)
 if grade==pass and exit_check_ok: allow_advance
 elif grade==partial: request_patch_or_requeue
-else: remediate()
+else: must-load tutor-remediate; remediate()
 ```

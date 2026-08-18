@@ -98,3 +98,17 @@ checkpoint schema 有字段，**无转移表**。
 
 - 结构化 grade JSON  
 - 与 Anki/间隔队列打通  
+
+---
+
+## 补充（UX/一致性子代理）
+
+已确认并部分修复：
+
+- tutor description 单文件矛盾 → 决策树  
+- tutor 不调度子 skill → must-load 表  
+- README 缺 skill → 全图  
+- checkpoint/obsidian-log 过薄 → 补步骤与 Distill  
+- schemas 路径 → remediate 内联 tags  
+
+仍 P1：grades.jsonl、题面预埋 rubric 工具化、install 时打包 schemas。
