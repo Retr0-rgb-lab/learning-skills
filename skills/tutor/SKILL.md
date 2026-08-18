@@ -28,6 +28,7 @@ description: Use when one-on-one tutoring, classroom markdown learning, Obsidian
 2. GRAPH BEFORE DEEP TEACH — 探测结束后先 Mermaid 再系统往下教  
 3. EVIDENCE GATE — 「懂了」不算；校验通过才进下一节点  
 4. CLASSROOM-FIRST — 学生可见内容以 classroom 文件为唯一真相  
+6. NO CLOBBER — 总览稳定；精讲新文件；反馈只追加
 5. USER ZONE — 不覆盖 `notes/user/**`
 
 ## Phase 细节
